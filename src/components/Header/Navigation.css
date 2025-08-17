@@ -1,0 +1,113 @@
+/* ===== HEADER & NAVIGATION STYLES ===== */
+.header {
+  padding: 2rem 1.5rem;
+  position: fixed;
+  z-index: var(--z-sticky);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 3rem;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(0%);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  mix-blend-mode: difference;
+  font-size: 1.04rem;
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  transition: color var(--transition-fast);
+  text-transform: uppercase;
+  -webkit-transition: color var(--transition-fast);
+  -moz-transition: color var(--transition-fast);
+  -ms-transition: color var(--transition-fast);
+  -o-transition: color var(--transition-fast);
+}
+.menu-icon {
+  display: none;
+  padding: 8px 10px; 
+  cursor: pointer;
+  border-radius: 12px;
+  padding-bottom: 2px;
+  z-index: 9999;
+}
+.small-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(4px);
+}
+
+.small-list-nav{
+    position: fixed;
+    background-color: black; 
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    border-radius: 13px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow: hidden; 
+    list-style: none;
+}
+.small-list-nav a{
+    color: var(--color-white);
+    font-size: 1.35rem;
+}
+
+.small-list-nav::before {
+    content: "PC";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45vw;
+    font-family: var(--font-family-heading);
+    color: #191919;
+    z-index: -1;
+    pointer-events: none; 
+    letter-spacing: -0.05em; 
+  } 
+/* Responsive Navigation */
+@media (max-width: 1050px) {
+  .nav {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
