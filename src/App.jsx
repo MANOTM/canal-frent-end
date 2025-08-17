@@ -8,6 +8,8 @@ import QuiSuisJe from './pages/qui-suis-je';
 import MesEvenements from './pages/mes-evenements';
 import Contact from './pages/contact';
 import Lenis from 'lenis';
+import SearchBox from './components/Search/Search';
+import Layout from './layout/Layout';
 
 // Separate component for the app content that can use useLocation
 const AppContent = () => {
@@ -24,18 +26,19 @@ const AppContent = () => {
       window.scrollTo(0, 0);
     }, 200)
   }, [pathname]);
-  
+
   return (
     <>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Tableaux />} />
-        <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
-        <Route path="/commande-personnalisee" element={<CommandePersonnalisee />} />
-        <Route path="/qui-suis-je" element={<QuiSuisJe />} />
-        <Route path="/mes-evenements" element={<MesEvenements />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<Layout><Tableaux /></Layout>} />
+        <Route path="/comment-ca-marche" element={<Layout><CommentCaMarche /></Layout>} />
+        <Route path="/commande-personnalisee" element={<Layout><CommandePersonnalisee /></Layout>} />
+        <Route path="/qui-suis-je" element={<Layout><QuiSuisJe /></Layout>} />
+        <Route path="/mes-evenements" element={<Layout><MesEvenements /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
       </Routes>
+      <SearchBox />
     </>
   );
 };

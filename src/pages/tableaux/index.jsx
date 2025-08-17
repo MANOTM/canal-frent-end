@@ -1,6 +1,9 @@
 function Tableaux() {
     return (
-        <h1>Tableuax</h1>
+        <section className="home">
+            <h1 className="headding">Pascale Canal</h1>
+            <h1 className="sous-headding">Visitez ma e-galerie</h1>
+        </section>
     );
 }
 

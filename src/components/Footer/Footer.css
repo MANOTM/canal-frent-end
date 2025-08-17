@@ -1,0 +1,118 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 20px 0;
+}
+.footer .container {
+  width: 90%;
+  margin: 20px auto;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: var(--font-size-sm);
+}
+.logo- * {
+  margin-bottom: 6px;
+}
+.footer-contact .logo- img {
+  width: 4rem;
+}
+.subscription-form {
+  width: 100%;
+}
+
+.form-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 24px;
+  padding: 3px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 8px;
+}
+
+.mail-icon {
+  height: 20px;
+  width: 20px;
+  color: #9ca3af;
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #374151;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+}
+
+.email-input::placeholder {
+  color: #9ca3af;
+}
+
+.subscribe-button {
+  background-color: #111827;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.subscribe-button:hover:not(:disabled) {
+  background-color: #1f2937;
+}
+
+.subscribe-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.uls {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+.uls ul li:first-child {
+  color: var(--color-yellow);
+  margin-bottom: 10px;
+}
+.uls ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.grey {
+  color: gray;
+}
+.grey a {
+  color: var(--color-yellow);
+}
+.big-headding h1{
+  font-family: var(--font-family-heading);
+  font-size: 21vw;
+}
