@@ -1,0 +1,40 @@
+.article {
+  overflow: hidden;
+  width: 376px;
+}
+
+.main-img {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.art-info {
+  padding: 1rem;
+}
+
+.art-info-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.art-title {
+  font-weight: 600;
+  font-size: 1.125rem; 
+}
+
+.art-price {
+  font-weight: 700;
+  font-size: 1.125rem; 
+}

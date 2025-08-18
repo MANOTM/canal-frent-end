@@ -66,6 +66,7 @@
     right: 0;
     bottom: 0;
     backdrop-filter: blur(4px);
+    display: none;
 }
 
 .small-list-nav{
@@ -108,6 +109,9 @@
     display: none;
   }
   .menu-icon {
+    display: block;
+  }
+  .small-nav{
     display: block;
   }
 }

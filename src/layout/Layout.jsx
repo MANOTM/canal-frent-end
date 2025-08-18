@@ -3,9 +3,11 @@ import Footer from "../components/Footer/Footer";
 
 export default function Layout({ children }) {
     return (
-        <div>
-            {children}
+        <>
+            <div className="hero-container">
+                {children}
+            </div>
             <Footer />
-        </div>
+        </>
     );
 }

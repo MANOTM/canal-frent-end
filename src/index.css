@@ -41,7 +41,7 @@
   --font-weight-bold: 700;
   
   /* Colors */
-  --color-black: #000000; 
+  --color-black: #222; 
   --color-secondary: #222222; 
   --color-yellow: #fff083; 
   --color-white: #ffffff; 
@@ -262,3 +262,9 @@ ul{
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
+
+.hero-container{
+  width: 90%;
+  max-width: 1300px !important;
+  margin-inline: auto;
+}
