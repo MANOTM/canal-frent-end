@@ -4,6 +4,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import Article from '../../components/Article/Article';
 import Layout from '../../layout/Layout';
 import { motion } from 'framer-motion';
+import Pagination from '../../components/Pagination/Pagination';
 
 
 function Tableaux() {
@@ -29,6 +30,9 @@ function Tableaux() {
                     <Article />
                     <Article />
                     <Article />
+                </div>
+                <div className="center-flex">
+                    <Pagination/>
                 </div>
             </section>
         </Layout>

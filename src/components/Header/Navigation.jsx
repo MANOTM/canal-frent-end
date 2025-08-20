@@ -5,6 +5,29 @@ import Menu from '../../icons/Menu';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.03, 
+        },
+    },
+};
+
+const letter = {
+    hidden: { y: 50, opacity: 0 },   // start below
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.3 ,
+            ease: "easeOut",
+        },
+    },
+};
+
 const Navigation = () => {
   const menuItems = [
     { path: '/', label: 'Tableaux' },
@@ -55,15 +78,20 @@ const Navigation = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 , ease: "easeInOut" }}
             >
-              <ul
+              <motion.ul
                 className="small-list-nav"
                 onClick={e => e.stopPropagation()}
+                variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }}
               >
                 {menuItems.map((item, index) => (
-                  <li
+                  <motion.li
                     key={item.path}
                     className="nav-item"
                     onClick={() => setOpen(!open)}
+                    variants={letter}
                   >
                     <Link
                       to={item.path}
@@ -71,9 +99,9 @@ const Navigation = () => {
                     >
                       {item.label}
                     </Link>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </motion.nav>
           )}
         </AnimatePresence>

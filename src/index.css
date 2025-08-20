@@ -111,13 +111,14 @@ html {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-regular);
   line-height: 1.6;
-  color: var(--color-dark); 
+  color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 /* PC Text Background */
@@ -134,7 +135,13 @@ html {
   pointer-events: none;
   letter-spacing: -0.05em;
 }
-
+/* ===== 404 ====== */
+.not-found {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* ===== TYPOGRAPHY ===== */
 h1,
 h2,
@@ -297,6 +304,11 @@ ul {
 }
 
 /* Flexbox */
+.center-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .flex-row {
   flex-direction: row;
 }

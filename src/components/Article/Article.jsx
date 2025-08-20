@@ -1,8 +1,9 @@
 import "./Article.css"
+import { motion } from "framer-motion"
 
 export default function Article({ title, price, imageUrl, imageAlt }) {
   return (
-    <div className="article">
+    <motion.div className="article">
       <div className="main-img">
         <img src={imageUrl || "https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754287948/paintings/gfn4d6dvo7oeskup07gk.webp"} alt={imageAlt} />
       </div>
@@ -12,6 +13,6 @@ export default function Article({ title, price, imageUrl, imageAlt }) {
           <p className="art-price">{price || '250 €'}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

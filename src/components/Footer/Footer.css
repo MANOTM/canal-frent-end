@@ -113,6 +113,11 @@
 .grey a {
   color: var(--color-yellow);
 }
+.big-headding {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .big-headding h1{
   font-family: var(--font-family-heading);
   font-size: 21vw;

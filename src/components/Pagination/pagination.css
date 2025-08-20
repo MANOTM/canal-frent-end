@@ -1,0 +1,64 @@
+
+/* Pagination component styles */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  margin: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-btn:hover {
+  background: #f8f9fa;
+  border-color: #d0d0d0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+ 
+.pagination-btn.active:hover {
+  background: #ffed4e;
+  border-color: #ffed4e;
+}
+
+/* Added disabled state styles for pagination buttons */
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+  color: #ccc;
+}
+
+.pagination-btn:disabled:hover {
+  background: #f5f5f5;
+  border-color: #e0e0e0;
+  transform: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.pagination-btn.active {
+      background: var(--color-yellow);
+    color: #333;
+    font-weight: 600;
+}
+

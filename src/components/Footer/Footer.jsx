@@ -2,6 +2,28 @@ import './Footer.css'
 import logo from '../../assets/images/logo.avif'
 import { Link } from 'react-router-dom';
 import Boite from '../../icons/Boite';
+import { motion } from 'framer-motion';
+const container = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.08, 
+        },
+    },
+};
+
+const letter = {
+    hidden: { y: 100, opacity: 0 },   // start below
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        },
+    },
+};
 
 function Footer() {
     return (
@@ -62,9 +84,18 @@ function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className="big-headding">
-                    <h1>CANAL</h1>
-                </div>
+                <motion.div
+                    className="big-headding flex gap-4 justify-center"
+                    variants={container}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.5 }} // triggers when in view
+                >
+                    <motion.h1 variants={letter}>C</motion.h1>
+                    <motion.h1 variants={letter}>N</motion.h1>
+                    <motion.h1 variants={letter}>A</motion.h1>
+                    <motion.h1 variants={letter}>L</motion.h1>
+                </motion.div>
             </div>
         </footer>);
 }
