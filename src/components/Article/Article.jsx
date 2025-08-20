@@ -1,6 +1,6 @@
 import "./Article.css"
 
-export function Article({ title, price, imageUrl, imageAlt }) {
+export default function Article({ title, price, imageUrl, imageAlt }) {
   return (
     <div className="article">
       <div className="main-img">

@@ -1,34 +1,37 @@
 import { useState } from 'react';
 import './index.css'
 import { FaAngleDown } from "react-icons/fa6";
-import {motion} from 'framer-motion'
 import Article from '../../components/Article/Article';
+import Layout from '../../layout/Layout';
+import { motion } from 'framer-motion';
 
 
 function Tableaux() {
     const [open, setOpen] = useState(false)
     return (
-        <section className="home">
-            <h1 className="headding">Pascale Canal</h1>
-            <h1 className="sous-headding">Visitez ma e-galerie</h1>
-            <div className="filter-form">
-                <div className="w-right">
-                    <button className='filter-btn' onClick={() => setOpen(!open)}>Filter <FaAngleDown /></button>
-                    {
-                        open &&
-                        <motion.div className="box-filter" initial={{opacity:0}} animate={{opacity:1}}>
-                            <ArtFilter />
-                        </motion.div>
-                    }
+        <Layout>
+            <section className="home">
+                <h1 className="headding">Pascale Canal</h1>
+                <h1 className="sous-headding">Visitez ma e-galerie</h1>
+                <div className="filter-form">
+                    <div className="w-right">
+                        <button className='filter-btn' onClick={() => setOpen(!open)}>Filter <FaAngleDown /></button>
+                        {
+                            open &&
+                            <motion.div className="box-filter" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                                <ArtFilter />
+                            </motion.div>
+                        }
+                    </div>
                 </div>
-            </div>
-            <div className="articles">
-                <Article/>
-                <Article/>
-                <Article/>
-                <Article/>
-            </div>
-        </section>
+                <div className="articles">
+                    <Article />
+                    <Article />
+                    <Article />
+                    <Article />
+                </div>
+            </section>
+        </Layout>
     );
 }
 
