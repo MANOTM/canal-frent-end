@@ -1,0 +1,152 @@
+.comment-ca-marche {
+  margin-top: 15rem;
+  color: var(--color-black);
+}
+.tap-toggel-ccm {
+  margin: 4rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.comment-ca-marche .headding {
+  font-size: 7vw;
+}
+
+.toggle-container {
+  display: flex;
+  background-color: #2d2d2d;
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* Added smooth transition for container hover effects */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Added container hover effect for subtle elevation */
+.toggle-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  background-color: white;
+  border-radius: 46px;
+  transition: transform 0.3s ease, width 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.toggle-button {
+  padding: 12px 10px;
+  border: none;
+  border-radius: 46px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  /* Enhanced transitions for smoother hover effects */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  background: transparent;
+  color: white;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.toggle-button.active {
+  color: #2d2d2d;
+}
+
+.toggle-button:hover:not(.active) {
+  /* Enhanced hover effect with subtle scale and improved background */
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.toggle-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Added smooth transition for focus states */
+.toggle-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.2s ease;
+}
+.line-article {
+    overflow: hidden;
+  margin-bottom: 4rem;
+  color: var(--color-white);
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 2rem;
+  height: 240px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.line-article.reverse-flex {
+  flex-direction: row-reverse;
+}
+.count-number {
+  font-family: var(--font-family-heading);
+  color: rgb(56 56 56);
+  font-size: 21rem;
+  position: relative;
+  top: 37px;
+}
+.la-blabla {
+  width: 50%;
+}
+.la-blabla h1 {
+  font-size: var(--font-size-4xl) ;
+  font-weight: var(--font-weight-bold);
+}
+.la-blabla p {
+  color: oklch(55.1% 0.027 264.364);
+  font-size: 17px;
+  margin-top: 8px;
+}
+@media (max-width: 1050px) {
+  .comment-ca-marche {
+    margin-top: 10rem;
+  }
+  .line-article {
+    display: block;
+  }
+  .count-number {
+    font-size: 4rem;
+    position: static;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .reverse-flex .count-number {
+    flex-direction: row !important;
+  }
+  .la-blabla {
+    width: 100%;
+    position: relative;
+    top: -12px;
+  }
+  .la-blabla h1 {
+    font-size: var(--font-size-2xl);
+  }
+  .la-blabla p {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 1050px) {
+  .toggle-container{
+    margin-inline: auto;
+  }
+}

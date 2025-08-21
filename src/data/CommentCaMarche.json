@@ -1,0 +1,48 @@
+[
+    {
+        "titleS": "Découvre ma collection",
+        "textS": "Parcours ma galerie de tableaux en vente en cliquant ici. Prends ton temps pour explorer les œuvres et trouver celle qui te correspond le mieux.",
+        "titleC": "Prends contact avec moi",
+        "textC": "Rends-toi sur la page Commande personnalisée et décris-moi ton projet. Plus tu seras précis(e) dans tes attentes et inspirations, plus je pourrai créer une œuvre qui te ressemble."
+    },
+    {
+        "titleS": "Sélectionne ton tableau",
+        "textS": "Une fois ton tableau préféré trouvé, clique sur le bouton 'Contacter pour acheter' présent sur sa page pour débuter le processus d'achat.",
+        "titleC": "Partage tes inspirations",
+        "textC": "Envoie-moi les photos ou références qui t'inspirent. Pour un portrait, une image en haute résolution et dans un bon éclairage naturel permettront d'obtenir un résultat plus fidèle et expressif."
+    },
+    {
+        "titleS": "Remplis le formulaire",
+        "textS": "Suis les étapes du formulaire pour renseigner tes informations de contact. Si tu as des demandes spécifiques, tu peux les mentionner dans la section prévue à cet effet.",
+        "titleC": "Discussion sur le style",
+        "textC": "Nous échangerons sur le style souhaité, le format du tableau et tout autre élément que tu souhaiterais voir apparaître dans l'œuvre."
+    },
+    {
+        "titleS": "Confirmation de ta demande",
+        "textS": "Après avoir soumis le formulaire, je te contacterai sous 48 heures ouvrées pour valider ta commande, répondre à tes questions et discuter des détails du paiement et de la livraison.",
+        "titleC": "Proposition et devis",
+        "textC": "Je te proposerai un concept et un devis détaillé en fonction de tes attentes et du temps nécessaire à la réalisation. Tu pourras demander des ajustements à ce stade."
+    },
+    {
+        "titleS": "Validation du paiement",
+        "textS": "Une fois que nous avons confirmé ensemble les modalités de paiement, effectue le règlement via le moyen convenu (virement bancaire, PayPal, etc.).",
+        "titleC": "Validation et acompte",
+        "textC": "Une fois le projet validé, un acompte de 30% du montant total sera demandé pour commencer le travail. Le paiement peut se faire par virement bancaire, PayPal, etc..."
+    },
+    {
+        "titleS": "Préparation et expédition",
+        "textS": "Dès réception du paiement, je prépare soigneusement ton tableau pour l'expédition. Il sera emballé avec précaution afin d'assurer sa protection lors du transport.",
+        "titleC": "Création de l'œuvre",
+        "textC": "Je réalise ton tableau personnalisé."
+    },
+    {
+        "titleS": "Livraison",
+        "textS": "Ton tableau sera expédié à l'adresse indiquée selon le mode de livraison choisi. Un numéro de suivi te sera communiqué pour suivre son acheminement.",
+        "titleC": "Solde et livraison",
+        "textC": "Après validation, le solde du paiement sera à régler. Ton portrait sera ensuite soigneusement emballé et expédié à l'adresse de ton choix. Un numéro de suivi te sera fourni pour suivre l'acheminement."
+    },
+    {
+        "titleS": "Réception et satisfaction",
+        "textS": "Une fois ton tableau reçu, assure-toi qu'il est en parfait état. Si tout est conforme, profite pleinement de ton œuvre !"
+    }
+]

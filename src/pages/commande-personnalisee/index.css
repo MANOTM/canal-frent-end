@@ -1,0 +1,26 @@
+.csf {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 4rem;
+}
+.csf h2 {
+  margin-bottom: 1rem;
+}
+.csf li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-lg);
+  gap: 15px;
+}
+.csf li .count {
+  background: #191919e3;
+  padding: 6px 16px;
+  border-radius: 50%;
+  color: var(--color-grey);
+}
+@media (max-width: 1050px) {
+ .csf{
+    flex-direction: row;
+ }
+}

@@ -1,0 +1,36 @@
+.contact .sous-headding {
+  font-size: var(--font-size-4xl);
+  width: 50%;
+  font-weight: var(--font-weight-medium);
+}
+.contact-se {
+  margin: 8rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.cub {
+  margin-bottom: 2rem;
+}
+.cub div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.icon-cub {
+  transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+}
+@media (max-width: 900px) {
+  .contact .sous-headding {
+    font-size: var(--font-size-2xl);
+    width: 100%;
+  }
+  .contact-se {
+    flex-direction: column;
+  }
+}

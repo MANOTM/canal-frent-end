@@ -11,7 +11,7 @@ export default function Pagination() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1) // Remove the '#'
-      const pageFromHash = hash.startsWith("pa-") ? Number.parseInt(hash.slice(5)) : 1
+      const pageFromHash = hash.startsWith("page-") ? Number.parseInt(hash.slice(5)) : 1
       if (pageFromHash >= 1 && pageFromHash <= totalPages) {
         setCurrentPage(pageFromHash)
       }
@@ -28,7 +28,7 @@ export default function Pagination() {
 
   const goToPage = (page) => {
     if (page >= 1 && page <= totalPages) {
-      window.location.hash = `#pa-${page}`
+      window.location.hash = `#page-${page}`
       setCurrentPage(page)
     }
   }

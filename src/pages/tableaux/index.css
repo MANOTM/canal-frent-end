@@ -2,11 +2,11 @@
   margin-top: 15rem;
   color: var(--color-black);
 }
-.home .headding {
+.headding {
   font-size: 9.5vw;
   font-weight: var(--font-weight-bold);
 }
-.home .sous-headding {
+.sous-headding {
   font-size: var(--font-size-5xl);
 }
 .filter-form {

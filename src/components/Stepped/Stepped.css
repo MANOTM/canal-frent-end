@@ -1,0 +1,128 @@
+.Stepped {
+  width: 700px;
+  height: fit-content;
+  border: 1px solid #22222221;
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(7px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #81818109;
+}
+.mainone {
+  width: 100%;
+  margin-top: 2rem;
+  border: 1px solid #22222221;
+  border-radius: 20px;
+  padding: 2rem;
+  padding-bottom: 2.5rem;
+  backdrop-filter: blur(50px);
+  background: #00000002;
+}
+.stepped-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4px;
+  width: 100%;
+}
+.nbr-count {
+  border: 2px solid var(--color-yellow);
+  padding: 2px 11px;
+  border-radius: 50%;
+  background: #8080801f;
+}
+.active-nbr {
+  background: #fff08357;
+}
+.bar- {
+  width: calc(50% - 60px);
+  height: 5px;
+  background: #51515157;
+  border-radius: 14px;
+}
+.active-bar {
+  background-color: var(--color-yellow);
+}
+.mainone h4 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.buttons-shooser {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.buttons-shooser button {
+  border: 1px solid #22222221;
+  border-radius: 13px;
+  background: #00000008;
+  padding: 12px;
+  width: 100%;
+}
+.cordonnees form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group-in {
+  display: flex;
+  gap: 20px;
+}
+.Stepped input {
+  width: 100%;
+  background: #2222220f;
+  padding: 9px;
+  border-radius: 9px;
+  border: 1px solid #22222221;
+}
+.Stepped input::placeholder {
+  font-size: 14px;
+  opacity: 0.54;
+}
+.steps-btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+.steps-btns button {
+  padding: 6.5px 18px;
+  border-radius: 9px;
+  background: #2222220f;
+  border-radius: 8px;
+  border: 1px solid #22222221;
+}
+.steps-btns .next {
+  background-color: var(--color-yellow);
+}
+.disbled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.final-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.final-form form div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+@media (max-width: 900px) {
+  .buttons-shooser {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+  }
+  .Stepped {
+    width: 100%;
+  }
+  .form-group-in {
+    flex-direction: column;
+  }
+}

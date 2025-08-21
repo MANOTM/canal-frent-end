@@ -1,0 +1,84 @@
+.pascalecanal- {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pascalecanal- img {
+  border-radius: 14px;
+  width: 400px;
+  filter: contrast(110%) brightness(70%) grayscale(100%);
+}
+.pascalecanal- h1 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+}
+.about-me p {
+  width: 60%;
+  margin: 8rem 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+}
+.about-me .right {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+
+  span {
+    width: 60%;
+  }
+}
+.buttons-ps {
+  margin: 2rem 0;
+  display: flex;
+  gap: 20px;
+}
+.buttons-ps a {
+  border: 1px solid var(--color-black);
+  padding: 6px 15px;
+  border-radius: 9px;
+  transition: all 0.3s;
+}
+.buttons-ps .btnactive {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.buttons-ps a:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+@media (max-width: 700px) {
+  .pascalecanal- {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .pascalecanal- img {
+    width: 100%;
+  }
+  .pascalecanal- h1 {
+    width: 100%;
+    text-align: right;
+    font-size: 28px;
+  }
+  .comment-ca-marche .headding {
+    font-size: 49px;
+  }
+
+  .about-me .right {
+    flex-direction: row;
+    width: 100%;
+  }
+  .about-me p {
+    margin: 3rem 0;
+  }
+  .about-me p,
+  .about-me span {
+    width: 100% !important;
+    text-align: justify;
+    font-size: var(--font-size-1xl);
+  }
+  .buttons-ps{
+    justify-content: center;
+  }
+}

@@ -11,7 +11,7 @@ function Tableaux() {
     const [open, setOpen] = useState(false)
     return (
         <Layout>
-            <section className="home">
+            <section className="home comment-ca-marche">
                 <h1 className="headding">Pascale Canal</h1>
                 <h1 className="sous-headding">Visitez ma e-galerie</h1>
                 <div className="filter-form">
@@ -32,7 +32,7 @@ function Tableaux() {
                     <Article />
                 </div>
                 <div className="center-flex">
-                    <Pagination/>
+                    <Pagination />
                 </div>
             </section>
         </Layout>
