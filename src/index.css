@@ -304,7 +304,7 @@ ul {
 }
 
 /* Flexbox */
-.center-flex{
+.center-flex {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,4 +365,27 @@ ul {
   border-top-left-radius: 45rem 174px;
   border-top-right-radius: 45rem 162px;
   transform: scale(1.08);
+}
+
+.skeleton {
+  background-color: #eee !important;
+  background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee) !important;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+  height: 50px;
+  margin: 14px 0px 14px;
+  animation: skeleton-animation 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-animation {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
 }

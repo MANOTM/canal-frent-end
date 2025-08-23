@@ -11,6 +11,7 @@
   background: #81818109;
 }
 .mainone {
+  overflow: hidden;
   width: 100%;
   margin-top: 2rem;
   border: 1px solid #22222221;
@@ -103,15 +104,53 @@
   pointer-events: none;
   opacity: 0.7;
 }
-.final-form form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.final-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.final-form form div{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.final-form form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.grid-articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-top: 2rem;
+}
+.grid-articles img {
+  width: 100%;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+.grid-articles div {
+  background: #2222220f;
+  padding: 9px;
+  padding-bottom: 0;
+  border-radius: 9px;
+  border: 1px solid #22222221;
+  text-align: center;
+  cursor: pointer;
+}
+.skeleton-father{
+  pointer-events:  none;
+}
+.grid-articles .skeleton{
+  height: 5rem;
+}
+.grid-articles .active {
+  background: #fff0834a;
+  border: 1px solid var(--color-yellow);
+} 
+.grid-articles p {
+  margin: 6px 0;
 }
 @media (max-width: 900px) {
   .buttons-shooser {

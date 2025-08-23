@@ -3,28 +3,7 @@ import logo from '../../assets/images/logo.avif'
 import { Link } from 'react-router-dom';
 import Boite from '../../icons/Boite';
 import { motion } from 'framer-motion';
-const container = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.08, 
-        },
-    },
-};
-
-const letter = {
-    hidden: { y: 100, opacity: 0 },   // start below
-    show: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.8,
-            ease: "easeOut",
-        },
-    },
-};
-
+import {container , letter } from '../../components/motion/motionVariants'
 function Footer() {
     return (
         <footer className='footer'>
@@ -88,8 +67,7 @@ function Footer() {
                     className="big-headding flex gap-4 justify-center"
                     variants={container}
                     initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.5 }} // triggers when in view
+                    whileInView="show" 
                 >
                     <motion.h1 variants={letter}>C</motion.h1>
                     <motion.h1 variants={letter}>N</motion.h1>

@@ -31,7 +31,7 @@ const CommentCaMarche = () => {
           <h1 className='headding'>ça marche ?</h1>
         </div>
         <div className="tap-toggel-ccm">
-          <ToggleTabs activeTab={activeTab} btn={['Achat Standard','Commande Personnalisée']} handleTabChange={handleTabChange} />
+          <ToggleTabs activeTab={activeTab} btn={['Achat Standard', 'Commande Personnalisée']} handleTabChange={handleTabChange} />
         </div>
         <div className="lines-articles">
           {CommentCaMarcheData.map((step, index) => <LineArticel step={step} index={index} activeTab={activeTab} isBlurring={isBlurring} />)}
@@ -46,7 +46,10 @@ const LineArticel = ({ step, index, activeTab, isBlurring }) => {
   return (
     <>
       {activeTab == 'custom' && !step.titleC ? '' :
-        <div className={`line-article ${index % 2 === 0 ? "reverse-flex" : ""}`}>
+        <motion.div className={`line-article ${index % 2 === 0 ? "reverse-flex" : ""}`}
+
+          initial={{ opacity: 0, y: 30 }}   // start hidden & below
+          whileInView={{ opacity: 1, y: 0 }}>
           <div className="count-number">0{index + 1}</div>
 
           <AnimatePresence mode="wait">
@@ -67,7 +70,7 @@ const LineArticel = ({ step, index, activeTab, isBlurring }) => {
           </AnimatePresence>
 
 
-        </div>
+        </motion.div>
       }
     </>
   )

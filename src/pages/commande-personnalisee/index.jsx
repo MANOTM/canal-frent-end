@@ -1,6 +1,7 @@
 import './index.css'
 import Layout from '../../layout/Layout';
 import PrjForm from '../../components/Forms/PrjForm';
+import { motion } from 'framer-motion'
 
 const steps = [{ text: "Envoyez votre demande via ce formulaire", },
 {
@@ -19,11 +20,13 @@ const CommandePersonnalisee = () => {
           <div className="right">
             <h2>Comment ça fonctionne</h2>
             <ul>
-              {steps.map((key, idx) => <li key={idx}><span className='count'>{++idx}</span> <span> {key.text}</span></li>)}
+              {steps.map((key, idx) => <motion.li
+                initial={{ opacity: 0, y: 30 }}   // start hidden & below
+                whileInView={{ opacity: 1, y: 0 }} key={idx}><span className='count'>{++idx}</span> <span> {key.text}</span></motion.li>)}
             </ul>
           </div>
         </div>
-        <PrjForm/>
+        <PrjForm />
       </div>
     </Layout>
   );

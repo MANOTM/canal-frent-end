@@ -10,6 +10,7 @@ import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
 import Loading from './components/Loading/Loading';
 import NotFound from './pages/404/NotFound';
+import Show from './pages/Show/Show';
 
 const AppContent = () => {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ const AppContent = () => {
           <Route path="/qui-suis-je" element={<QuiSuisJe />} />
           <Route path="/mes-evenements" element={<MesEvenements />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/:label" element={<Show />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
