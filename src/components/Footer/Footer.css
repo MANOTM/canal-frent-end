@@ -47,7 +47,8 @@
   -o-border-radius: 24px;
 }
 
-.icon-container {
+.subscription-form .icon-container {
+  margin-bottom: 0 !important;
   display: flex;
   align-items: center;
   padding-left: 16px;

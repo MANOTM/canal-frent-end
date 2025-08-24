@@ -10,7 +10,7 @@ import Lenis from 'lenis';
 import { AnimatePresence } from 'framer-motion';
 import Loading from './components/Loading/Loading';
 import NotFound from './pages/404/NotFound';
-import Show from './pages/Show/Show';
+import Show from './pages/Show/Show'; 
 
 const AppContent = () => {
   const { pathname } = useLocation();

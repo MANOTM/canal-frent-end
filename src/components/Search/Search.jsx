@@ -1,10 +1,34 @@
 import { Link } from 'react-router-dom';
 import './search.css'
 import logo from '../../assets/images/logo.avif'
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
+import api from '../../api/axios';
 
 function SearchBox() {
     const [result, setResult] = useState([])
+    const [input, setInput] = useState('')
+
+    useEffect(() => {
+
+        const searchArticles = async (search) => {
+            if (!search.trim()){
+                setResult([])
+                return
+            }
+            try {
+                const response = await api.get(`/article/search`, {
+                    params: { search }, // sends ?search=...
+                });
+                setResult(response.data);
+            } catch (error) {
+                console.error("Error searching articles:", error);
+                throw error;
+            }
+        }
+
+
+        searchArticles(input)
+    }, [input])
 
     return (
         <div className="search-box">
@@ -12,13 +36,12 @@ function SearchBox() {
             {!result.length ||
                 <div className="result">
                     <Fragment>
-                        <Link to='' >
-                            <img src='https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754288197/paintings/w62qtpu42zl0ugdanys6.webp' />
-                            <p>Flotte</p>
-                        </Link> <Link to='' >
-                            <img src='https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754288197/paintings/w62qtpu42zl0ugdanys6.webp' />
-                            <p>Flotte</p>
-                        </Link>
+                        {result.map((art, ind) =>
+                            <Link to={`/${art.name}`} key={ind}>
+                                <img src={art.mainImg} />
+                                <p>{art.name}</p>
+                            </Link>
+                        )}
                     </Fragment>
                 </div>
             }
@@ -27,7 +50,9 @@ function SearchBox() {
                 <div className="form-logo">
                     <img src={logo} />
                 </div>
-                <input type="text" placeholder='Recherche un tableau...' />
+                <input type="text"
+                    value={input}
+                    onChange={e => setInput(e.target.value)} placeholder='Recherche un tableau...' />
                 <button
                     className="return-top"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
