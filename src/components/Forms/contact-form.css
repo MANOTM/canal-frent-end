@@ -8,6 +8,9 @@
   margin: 2rem 0;    
   border: 1px solid #22222221;
 }
+.msg-form{
+  margin-bottom: 1.5rem;
+}
 .form-container-prj form {
   width: 100%;
   color: var(--text-color);

@@ -24,6 +24,7 @@
   gap: 6px;
   top: 12px;
   right: 12px;
+  z-index: 2;
 }
 .imgs-right img {
   border: 2px solid #ffffff70;
@@ -46,6 +47,21 @@
   -ms-transform: scale(1.01);
   -o-transform: scale(1.01);
 }
+.img-cadr {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.img-cadre-main {
+  position: absolute;
+  top: 100px;
+  left: 50%;                /* push element to the middle */
+  transform: translateX(-50%); /* pull it back half its width */
+  width: 15%;
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 2px 4px 8px);
+  border-radius: 6px;
+}
+
 .article-main-img .main-img- {
   width: 100%;
   height: 100%;
@@ -90,8 +106,8 @@
 .flexbox p {
   font-size: 17px;
 }
-.info-par{
-    margin: 9rem 0;
+.info-par {
+  margin: 9rem 0;
 }
 @media (max-width: 900px) {
   .hero-show {

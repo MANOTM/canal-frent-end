@@ -123,3 +123,7 @@
   font-family: var(--font-family-heading);
   font-size: 21vw;
 }
+.email-validated{
+  color: var(--color-yellow);
+  margin-left: 10px;
+}

@@ -31,10 +31,10 @@ const letter = {
 const Navigation = () => {
   const menuItems = [
     { path: '/', label: 'Tableaux' },
-    { path: '/comment-ca-marche', label: 'comment ca marche?' },
-    { path: '/commande-personnalisee', label: 'commande personnalisee' },
+    { path: '/comment-ca-marche', label: 'COMMENT ÇA MARCHE ?' },
+    { path: '/commande-personnalisee', label: 'COMMANDE PERSONNALISÉE' },
     { path: '/qui-suis-je', label: 'qui suis je?' },
-    { path: '/mes-evenements', label: 'mes-evenements' },
+    { path: '/mes-evenements', label: 'MES ÉVÈNEMENTS' },
     { path: '/contact', label: 'Contact' }
   ];
 

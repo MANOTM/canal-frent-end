@@ -1,18 +1,21 @@
 import "./Article.css"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
-export default function Article({ title, price, imageUrl, imageAlt }) {
+export default function Article({ Article }) {
   return (
-    <motion.div className="article">
-      <div className="main-img">
-        <img src={imageUrl || "https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754287948/paintings/gfn4d6dvo7oeskup07gk.webp"} alt={imageAlt} />
-      </div>
-      <div className="art-info">
-        <div className="art-info-content">
-          <h3 className="art-title">{title || 'Lorem'}</h3>
-          <p className="art-price">{price || '250 €'}</p>
+    <motion.div className="article" whileTap={{ scale: 0.97 }}>
+      <Link to={`/${Article?.name}`} >
+        <div className="main-img">
+          <motion.img   src={Article?.mainImg} alt={Article?.name} />
         </div>
-      </div>
+        <div className="art-info">
+          <div className="art-info-content">
+            <h3 className="art-title">{Article?.name}</h3>
+            <p className="art-price">{Article?.price}€</p>
+          </div>
+        </div>
+      </Link>
     </motion.div>
-  )
+  );
 }

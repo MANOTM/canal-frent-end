@@ -1,40 +1,55 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Layout from "../../layout/Layout";
 import './show.css'
+import useFetch from "../../hooks/useFetch";
+import room from '../../assets/images/mockup-living-room.webp'
+import NotFound from "../404/NotFound";
+import { useState } from "react";
 
 function Show() {
-    return (
-        <Layout>
+    const { label } = useParams()
+    const { data, loading, error } = useFetch(`/article/${label}`);
+    const [mainSrc, setMainSrc] = useState(data?.mainImg);
 
-            <section className="show comment-ca-marche">
-                <h1 className="headding">Pitchou</h1>
-                <h1 className="sous-headding">Par Pascale Canal</h1>
-                <div className="hero-show">
-                    <div className="article-main-img">
-                        <div className="imgs-right">
-                            <img src="	https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754288263/paintings/wcrjeoigew3nkqot5q3p.webp" alt="" />
-                            <img src="	https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754288263/paintings/wcrjeoigew3nkqot5q3p.webp" alt="" />
-                        </div>
-                        <img className="main-img-" src="	https://res.cloudinary.com/dzhi3sfz7/image/upload/v1754288263/paintings/wcrjeoigew3nkqot5q3p.webp" alt="" />
-                    </div>
-                    <div className="details">
-                        <div className="buttom">
-                            <div className="head-details">
-                                <h3>Détails</h3>
-                                <Link to='/conatct'>Contacter pour acheter</Link>
+    return (
+        !loading && !error ?
+            <Layout>
+                <section className="show comment-ca-marche">
+                    <h1 className="headding">{data?.name}</h1>
+                    <h1 className="sous-headding">Par Pascale Canal</h1>
+                    <div className="hero-show">
+                        <div className="article-main-img">
+                            <div className="imgs-right">
+                                <img src={data?.mainImg} onClick={() => setMainSrc(data?.mainImg)} />
+                                <img src={room} onClick={() => setMainSrc(room)} />
                             </div>
-                            <div className="flexbox">
-                                <div><h5>Prix:</h5> <p>250 €</p></div>
-                                <div><h5>Dimensions:</h5> <p>50 cm x 50 cm</p></div>
-                                <div><h5>Technique:</h5> <p>Peinture à l'huile sur toile</p></div>
-                                <div><h5>Date de création:</h5> <p>2025</p></div>
+                            <div className="img-cadr">
+                                <img className="main-img-" src={mainSrc || data?.mainImg} />
+                                {mainSrc === room &&
+                                    <img className="img-cadre-main" src={data?.mainImg} />
+                                }
                             </div>
                         </div>
+                        <div className="details">
+                            <div className="buttom">
+                                <div className="head-details">
+                                    <h3>Détails</h3>
+                                    <Link to='/conatct'>Contacter pour acheter</Link>
+                                </div>
+                                <div className="flexbox">
+                                    <div><h5>Prix:</h5> <p>{data?.price} €</p></div>
+                                    <div><h5>Dimensions:</h5> <p>50 cm x 50 cm</p></div>
+                                    <div><h5>Technique:</h5> <p>Peinture à l'huile sur toile</p></div>
+                                    <div><h5>Date de création:</h5> <p>2025</p></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <p className="info-par">Dans l’herbe tendre des premiers printemps, il chancelle, curieux et léger. Le veau d’Aubrac, promesse fragile d’une race fière, arbore déjà le pelage doré de ses aïeux. Dans ses yeux grands ouverts, l’innocence du monde, et au creux de ses pas hésitants, l’éveil d’une tradition. Il ne sait rien encore des saisons, mais il porte en lui la mémoire d’un troupeau, d’un plateau, d’un peuple. Veau d’Aubrac, souffle neuf dans la brume du matin, éclat de vie sur la terre ancestrale.</p>
-            </section>
-        </Layout>
+                    <p className="info-par">{data?.desc}</p>
+                </section>
+            </Layout>
+            : <NotFound />
+
     );
 }
 

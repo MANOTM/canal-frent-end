@@ -10,6 +10,14 @@
   align-items: center;
   background: #81818109;
 }
+.msg-submit {
+  margin-top: 1rem;
+  color: green;
+  font-size: 1.16rem;
+}
+.msg-submit.error {
+  color: red;
+}
 .mainone {
   overflow: hidden;
   width: 100%;
@@ -139,16 +147,16 @@
   text-align: center;
   cursor: pointer;
 }
-.skeleton-father{
-  pointer-events:  none;
+.skeleton-father {
+  pointer-events: none;
 }
-.grid-articles .skeleton{
+.grid-articles .skeleton {
   height: 5rem;
 }
 .grid-articles .active {
   background: #fff0834a;
   border: 1px solid var(--color-yellow);
-} 
+}
 .grid-articles p {
   margin: 6px 0;
 }

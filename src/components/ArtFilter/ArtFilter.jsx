@@ -1,17 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import api from "../../api/axios"
 
 const categories = ["Animal", "Personnage", "Paysage", "Commande Personnalisée"]
 
-function ArtFilter() {
+function ArtFilter({ setLoading, setError, setArticles, setTotalPages ,currentPage}) {
     const [searchTerm, setSearchTerm] = useState("")
     const [availableOnly, setAvailableOnly] = useState(false)
     const [selectedCategories, setSelectedCategories] = useState([])
-    const [totalWorks] = useState(26)
+    const [totalWorks,setTotalWorks] = useState(26)
 
     const handleCategoryToggle = (category) => {
-        setSelectedCategories((prev) =>
-            prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category],
-        )
+        setSelectedCategories(category)
     }
 
     const clearFilters = () => {
@@ -19,6 +18,33 @@ function ArtFilter() {
         setAvailableOnly(false)
         setSelectedCategories([])
     }
+    useEffect(() => {
+            const load = async () => {
+                try {
+                    setLoading(true);
+                    setError("");
+    
+                    const res = await api.get("/article", { params: { page: currentPage,category: selectedCategories,search:searchTerm} });
+    
+                    // Try common response shapes
+                    const payload = res.data || {};
+                    const items =
+                        payload.articles ?? []; // prefer data, fallback to articles
+                    const pages = payload.totalPages ?? 1;
+    
+                    setArticles(items);
+                    setTotalPages(Math.max(1, pages));
+                    setTotalWorks(payload.totalArticles ?? 0);
+                } catch (e) {
+                    console.error(e);
+                    setError("Failed to load articles");
+                } finally {
+                    setLoading(false);
+                }
+            };
+    
+            load();
+        }, [selectedCategories,searchTerm]);
 
     return (
         <>

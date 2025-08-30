@@ -3,27 +3,59 @@
 import { useState } from "react"
 import { HiOutlinePhotograph } from "react-icons/hi"
 import "./contact-form.css"
+import api from "../../api/axios"
 
 export default function PrjForm() {
     const [selectedFiles, setSelectedFiles] = useState([])
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [loading, setLoading] = useState(false);
+    const [msg, setMsg] = useState("");
 
     const handleFileChange = (e) => {
         const files = Array.from(e.target.files)
         setSelectedFiles(files)
     }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setMsg("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+        if (!name || !email || selectedFiles.length === 0) {
+            setMsg("Name, email, and image are required");
+            return;
+        }
 
-        const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData.entries())
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        if (phone) formData.append("tel", phone);
 
-        console.log("Form data:", data)
-        console.log("Files:", selectedFiles)
+        formData.append("img", selectedFiles[0]);
 
-        alert("Form submitted! Check console for details.")
-    }
+        try {
+            setLoading(true);
+            const res = await api.post("/commande", formData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+            setMsg("Commande submitted successfully ✅");
 
+            // Reset form
+            setName("");
+            setEmail("");
+            setPhone("");
+            setSelectedFiles([]);
+
+
+        } catch (err) {
+            console.error(err);
+            const apiMsg =
+                err?.response?.data?.message || "Failed to submit commande. Try again.";
+            setMsg(apiMsg);
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <div className="form-container-prj">
             <form onSubmit={handleSubmit}>
@@ -33,21 +65,21 @@ export default function PrjForm() {
                         <label htmlFor="nomComplet" className="form-label">
                             Nom complet <span className="required">*</span>
                         </label>
-                        <input type="text" id="nomComplet" name="nomComplet" required className="form-input" />
+                        <input type="text" value={name} onChange={e => setName(e.target.value)} id="nomComplet" name="nomComplet" required className="form-input" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">
                             Email <span className="required">*</span>
                         </label>
-                        <input type="email" id="email" name="email" required className="form-input" />
+                        <input type="email" value={email} onChange={e => setEmail(e.target.value)} id="email" name="email" required className="form-input" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="telephone" className="form-label">
                             Téléphone
                         </label>
-                        <input type="tel" id="telephone" name="telephone" className="form-input" />
+                        <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} id="telephone" name="telephone" className="form-input" />
                     </div>
                 </div>
 
@@ -96,9 +128,9 @@ export default function PrjForm() {
                         </div>
                     )}
                 </div>
-
-                <button type="submit" className="submit-button">
-                    Envoyer
+                {msg && <p className="msg-form">{msg}</p>}
+                <button type="submit" className="submit-button" disabled={loading}>
+                    {loading ? " Envoi en cours..." : "Envoyer"}
                 </button>
             </form>
         </div>
